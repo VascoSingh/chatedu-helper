@@ -5,7 +5,7 @@ import { UploadFiles } from "@/components/UploadFiles";
 import { NameCourse } from "@/components/NameCourse";
 import { OnboardingProgress } from "@/components/OnboardingProgress";
 import { useNavigate } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Upload, Circle, Check } from "lucide-react";
+import { ChevronLeft, ChevronRight, Upload, BookOpen, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -26,11 +26,11 @@ const Index = () => {
 
   const ProcessSteps = () => (
     <div className="flex flex-col items-center justify-center gap-8 mt-12 mb-16">
-      <div className="flex items-center justify-center gap-20 relative">
+      <div className="flex items-center justify-center gap-24 relative">
         {[
           { title: "Upload Files", icon: Upload, step: 1 },
-          { title: "Organize Studying", icon: Circle, step: 2 },
-          { title: "Learn Everything", icon: Check, step: 3 },
+          { title: "Organize Studying", icon: BookOpen, step: 2 },
+          { title: "Learn Everything", icon: GraduationCap, step: 3 },
         ].map((item, index) => (
           <div key={index} className="flex flex-col items-center relative">
             <div
@@ -47,7 +47,7 @@ const Index = () => {
             </p>
             {index < 2 && (
               <div
-                className={`absolute top-6 left-[3rem] w-[10rem] h-[2px] transition-colors duration-300 ${
+                className={`absolute top-6 left-[3.5rem] w-[12rem] h-[2px] transition-colors duration-300 ${
                   step > item.step ? "bg-primary" : "bg-secondary"
                 }`}
               />

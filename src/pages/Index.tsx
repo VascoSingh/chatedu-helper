@@ -25,21 +25,21 @@ const Index = () => {
   };
 
   const ProcessSteps = () => (
-    <div className="flex items-center justify-center gap-4 mb-8 text-primary">
+    <div className="flex items-center justify-center gap-8 mt-12 mb-16 text-primary max-w-lg mx-auto">
       <div className="flex flex-col items-center">
         <div className="p-3 bg-primary/10 rounded-full">
           <Upload className="w-6 h-6" />
         </div>
         <p className="text-sm mt-2">Upload Files</p>
       </div>
-      <div className="w-8 h-px bg-primary/30" />
+      <div className="w-12 h-px bg-primary/30" />
       <div className="flex flex-col items-center">
         <div className="p-3 bg-primary/10 rounded-full">
           <BookOpen className="w-6 h-6" />
         </div>
-        <p className="text-sm mt-2">Get Study Tools</p>
+        <p className="text-sm mt-2">Organize Studying</p>
       </div>
-      <div className="w-8 h-px bg-primary/30" />
+      <div className="w-12 h-px bg-primary/30" />
       <div className="flex flex-col items-center">
         <div className="p-3 bg-primary/10 rounded-full">
           <GraduationCap className="w-6 h-6" />

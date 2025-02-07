@@ -26,7 +26,7 @@ const Index = () => {
 
   const ProcessSteps = () => (
     <div className="flex flex-col items-center justify-center gap-8 mt-12 mb-16">
-      <div className="flex items-center justify-center gap-16 relative">
+      <div className="flex items-center justify-center gap-20 relative">
         {[
           { title: "Upload Files", step: 1 },
           { title: "Organize Studying", step: 2 },
@@ -34,20 +34,20 @@ const Index = () => {
         ].map((item, index) => (
           <div key={index} className="flex flex-col items-center relative">
             <div
-              className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold transition-colors duration-300 ${
+              className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-medium transition-colors duration-300 ${
                 step >= item.step
                   ? "bg-primary text-white"
-                  : "bg-secondary text-primary"
+                  : "border-2 border-primary text-primary bg-white"
               }`}
             >
               {item.step}
             </div>
-            <p className="mt-4 text-sm font-medium text-primary whitespace-nowrap">
+            <p className="mt-3 text-sm font-medium text-primary whitespace-nowrap">
               {item.title}
             </p>
             {index < 2 && (
               <div
-                className={`absolute top-8 left-[4rem] w-[8rem] h-0.5 transition-colors duration-300 ${
+                className={`absolute top-6 left-[3rem] w-[10rem] h-[2px] transition-colors duration-300 ${
                   step > item.step ? "bg-primary" : "bg-secondary"
                 }`}
               />

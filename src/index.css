@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -12,19 +13,19 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 121 53% 47%;
+    --primary: 134 38% 63%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 121 53% 95%;
-    --secondary-foreground: 121 53% 20%;
-    --muted: 121 53% 95%;
+    --secondary: 134 38% 95%;
+    --secondary-foreground: 134 38% 20%;
+    --muted: 134 38% 95%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 121 53% 95%;
-    --accent-foreground: 121 53% 20%;
+    --accent: 134 38% 95%;
+    --accent-foreground: 134 38% 20%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 121 53% 90%;
-    --input: 121 53% 90%;
-    --ring: 121 53% 47%;
+    --border: 134 38% 90%;
+    --input: 134 38% 90%;
+    --ring: 134 38% 63%;
     --radius: 0.75rem;
   }
 }

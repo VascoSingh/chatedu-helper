@@ -24,40 +24,6 @@ const Index = () => {
     if (step > 1) setStep(step - 1);
   };
 
-  const ProcessSteps = () => (
-    <div className="flex flex-col items-center justify-center gap-8 mt-12 mb-16">
-      <div className="flex items-center justify-center gap-20 relative">
-        {[
-          { title: "Upload Files", step: 1 },
-          { title: "Organize Studying", step: 2 },
-          { title: "Learn Everything", step: 3 },
-        ].map((item, index) => (
-          <div key={index} className="flex flex-col items-center relative">
-            <div
-              className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-medium transition-colors duration-300 ${
-                step >= item.step
-                  ? "bg-primary text-white"
-                  : "border-2 border-primary text-primary bg-white"
-              }`}
-            >
-              {item.step}
-            </div>
-            <p className="mt-3 text-sm font-medium text-primary whitespace-nowrap">
-              {item.title}
-            </p>
-            {index < 2 && (
-              <div
-                className={`absolute top-6 left-[3rem] w-[10rem] h-[2px] transition-colors duration-300 ${
-                  step > item.step ? "bg-primary" : "bg-secondary"
-                }`}
-              />
-            )}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
       <div className="w-full max-w-md mx-auto">
@@ -71,12 +37,7 @@ const Index = () => {
         
         <div className="relative mb-8">
           {step === 1 && <CreateAccount onNext={() => setStep(2)} />}
-          {step === 2 && (
-            <>
-              <UploadFiles onNext={() => setStep(3)} />
-              <ProcessSteps />
-            </>
-          )}
+          {step === 2 && <UploadFiles onNext={() => setStep(3)} />}
           {step === 3 && <NameCourse onComplete={handleComplete} />}
         </div>
 

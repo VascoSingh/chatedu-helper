@@ -5,7 +5,7 @@ import { UploadFiles } from "@/components/UploadFiles";
 import { NameCourse } from "@/components/NameCourse";
 import { OnboardingProgress } from "@/components/OnboardingProgress";
 import { useNavigate } from "react-router-dom";
-import { ChevronLeft, ChevronRight, Upload, BookOpen, GraduationCap } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -25,26 +25,35 @@ const Index = () => {
   };
 
   const ProcessSteps = () => (
-    <div className="flex items-center justify-center gap-8 mt-12 mb-16 text-primary max-w-lg mx-auto">
-      <div className="flex flex-col items-center">
-        <div className="p-3 bg-primary/10 rounded-full">
-          <Upload className="w-6 h-6" />
-        </div>
-        <p className="text-sm mt-2">Upload Files</p>
-      </div>
-      <div className="w-12 h-px bg-primary/30" />
-      <div className="flex flex-col items-center">
-        <div className="p-3 bg-primary/10 rounded-full">
-          <BookOpen className="w-6 h-6" />
-        </div>
-        <p className="text-sm mt-2">Organize Studying</p>
-      </div>
-      <div className="w-12 h-px bg-primary/30" />
-      <div className="flex flex-col items-center">
-        <div className="p-3 bg-primary/10 rounded-full">
-          <GraduationCap className="w-6 h-6" />
-        </div>
-        <p className="text-sm mt-2">Learn Everything</p>
+    <div className="flex flex-col items-center justify-center gap-8 mt-12 mb-16">
+      <div className="flex items-center justify-center gap-16 relative">
+        {[
+          { title: "Upload Files", step: 1 },
+          { title: "Organize Studying", step: 2 },
+          { title: "Learn Everything", step: 3 },
+        ].map((item, index) => (
+          <div key={index} className="flex flex-col items-center relative">
+            <div
+              className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold transition-colors duration-300 ${
+                step >= item.step
+                  ? "bg-primary text-white"
+                  : "bg-secondary text-primary"
+              }`}
+            >
+              {item.step}
+            </div>
+            <p className="mt-4 text-sm font-medium text-primary whitespace-nowrap">
+              {item.title}
+            </p>
+            {index < 2 && (
+              <div
+                className={`absolute top-8 left-[4rem] w-[8rem] h-0.5 transition-colors duration-300 ${
+                  step > item.step ? "bg-primary" : "bg-secondary"
+                }`}
+              />
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
